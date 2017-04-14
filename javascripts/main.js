@@ -43,31 +43,6 @@ var thirdDinosaurJSON = function(){
 	});
 };
 
-//main.js
-// firstDinosaurJSON().then(function(jsonData1){
-// 	console.log(jsonData1);
-// 	dinosaurs = jsonData1;
-// 	writeDOM();
-// }).catch(function(jsonDataFail1){
-// 	console.log(jsonDataFail1);
-// });
-
-// secondDinosaurJSON().then(function(jsonData2){
-// 	console.log(jsonData1);
-// 	dinosaurs = jsonData1;
-// 	writeDOM();
-// }).catch(function(jsonDataFail1){
-// 	console.log(jsonDataFail1);
-// });
-
-// thirdDinosaurJSON().then(function(jsonData1){
-// 	console.log(jsonData1);
-// 	dinosaurs = jsonData1;
-// 	writeDOM();
-// }).catch(function(jsonDataFail1){
-// 	console.log(jsonDataFail1);
-// });
-
 	Promise.all([firstDinosaurJSON(), secondDinosaurJSON(), thirdDinosaurJSON()])
 		.then(function(resultz){
 			console.log("resultz", resultz);

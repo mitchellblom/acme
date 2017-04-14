@@ -3,7 +3,19 @@
         {
             "id": 0,
             "category": 0,
-            "name": "personal",
+            "name": "Personal",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+        },
+        {
+            "id": 0,
+            "category": 0,
+            "name": "Handheld",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+        },
+        {
+            "id": 0,
+            "category": 0,
+            "name": "Heavy Duty",
             "description": "Fireworks intended for recreational use during holiday celebrations"
         }
     ]
