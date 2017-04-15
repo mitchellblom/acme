@@ -7,10 +7,10 @@
         {
             "id": 1,
             "name": "Commercial"
-        }
+        },
         {
             "id": 2,
             "name": "Military"
-        },
+        }
     ]
 }
