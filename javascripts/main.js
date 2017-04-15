@@ -4,17 +4,27 @@ $(document).ready(function() {
     var types = [];
     var products = [];
 
-    function writeDOM(array, heading) {
-        console.log("");
-        var domString = "";
-        domString += `<h5>${heading}</h5>`
-        domString += `<select>`
+    function writeOptionsToDOM(array, heading) {
+        var optionString = "";
+        optionString += `<h5>${heading}</h5>`;
+        optionString += `<select>`;
         for (var i = 0; i < array.length; i++) {
-            domString += `<option>${array[i].name}</option>`;
+            optionString += `<option>${array[i].name}</option>`;
         }
-        domString += `</select>`
-        $("#promises").append(domString);
+        optionString += `</select>`;
+        $("#optionContainer").append(optionString);
     };
+
+    function writeProductCardsToDOM(array){
+    	productString = `<div class="container col-sm-3">`;
+    	for (var i = 0; i < array.length; i++) {
+            productString += `<h3>${array[i].name}</h3>`;
+            productString += `<img src="${array[i].image}" alt="Product Image">`;
+            productString += `<h4>${array[i].description}</h4>`;
+        }
+    	productString += "</div>";
+    	$("#cardContainer").append(productString);
+    }
 
     var productJSON = function() {
         return new Promise(function(resolve, reject) {
@@ -50,21 +60,22 @@ $(document).ready(function() {
         results.forEach(function(singleCategory) {
             categories.push(singleCategory);
         });
-        writeDOM(categories, "Categories");
+        writeOptionsToDOM(categories, "Categories");
     });
 
     typeJSON().then(function(results) {
         results.forEach(function(singleType) {
             types.push(singleType);
         });
-        writeDOM(types, "Types");
+        writeOptionsToDOM(types, "Types");
     });
 
     productJSON().then(function(results) {
         results.forEach(function(singleProduct) {
             products.push(singleProduct);
         });
-        writeDOM(products, "Products");
+        writeOptionsToDOM(products, "Products");
+        writeProductCardsToDOM(products);
     });
 
 });

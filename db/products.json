@@ -1,17 +1,19 @@
 {
     "products": [
-    	{
+        {
             "id": 0,
             "type": 0,
             "category": 0,
             "name": "Pop Rocks",
-            "description": "Similar to the candy they look like, but don't eat them!"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
+            "description": "Similar to the candy they look like, but don’t eat them!"
         },
         {
             "id": 1,
             "type": 0,
             "category": 0,
             "name": "Black Cats",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Chainable little explosives that also explode underwater."
         },
         {
@@ -19,174 +21,199 @@
             "type": 0,
             "category": 0,
             "name": "Fairy Sparklers",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 3,
             "type": 1,
             "category": 0,
-            "name": "Fairy Sparklers",
+            "name": "Chicken Whistlers",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 4,
             "type": 1,
             "category": 0,
-            "name": "Pop Rocks",
-            "description": "Similar to the candy they look like, but don't eat them!"
+            "name": "Chimichanga",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
+            "description": "Similar to the candy they look like, but don’t eat them!"
         },
         {
             "id": 5,
             "type": 1,
             "category": 0,
-            "name": "Ticker Tape",
+            "name": "Jimmy’s Sprinks",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "For use in a parade or party."
         },
         {
             "id": 6,
             "type": 2,
             "category": 0,
-            "name": "Fairy Sparklers01",
+            "name": "Cupcake Caps",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 7,
             "type": 2,
             "category": 0,
-            "name": "Fairy Sparklers02",
+            "name": "Flower Flailers",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 8,
             "type": 2,
             "category": 0,
-            "name": "Fairy Sparklers03",
+            "name": "Orange Bombs",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 9,
-            "type": 0,
+            "type": 1,
             "category": 1,
-            "name": "Fairy Sparklers04",
+            "name": "Cookie Crumbler",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 10,
-            "type": 0,
+            "type": 1,
             "category": 1,
-            "name": "Fairy Sparklers05",
+            "name": "Nachoes",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 11,
-            "type": 0,
+            "type": 1,
             "category": 1,
-            "name": "Fairy Sparklers06",
+            "name": "Special Sauce",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 12,
-            "type": 1,
+            "type": 0,
             "category": 1,
-            "name": "Fairy Sparklers07",
+            "name": "Electron Smoosher",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 13,
-            "type": 1,
+            "type": 0,
             "category": 1,
-            "name": "Fairy Sparklers08",
+            "name": "Atom’s Apple",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 14,
-            "type": 1,
+            "type": 0,
             "category": 1,
-            "name": "Fairy Sparklers09",
+            "name": "Neon Graveyard",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 15,
             "type": 2,
             "category": 1,
-            "name": "Fairy Sparklers10",
+            "name": "Monkey Muffins",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 16,
             "type": 2,
             "category": 1,
-            "name": "Fairy Sparklers11",
+            "name": "Blue Suede Shoes",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 17,
             "type": 2,
             "category": 1,
-            "name": "Fairy Sparklers12",
+            "name": "Gnome Nuke",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 18,
-            "type": 0,
+            "type": 2,
             "category": 2,
-            "name": "Fairy Sparklers13",
+            "name": "Marker Missle",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 19,
-            "type": 0,
+            "type": 2,
             "category": 2,
-            "name": "Fairy Sparklers14",
+            "name": "Paper Plane",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 20,
-            "type": 0,
+            "type": 2,
             "category": 2,
-            "name": "Fairy Sparklers15",
+            "name": "Starbuck-n-duck",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 21,
             "type": 1,
             "category": 2,
-            "name": "Fairy Sparklers16",
+            "name": "Merry Crisp-moss",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 22,
             "type": 1,
             "category": 2,
-            "name": "Fairy Sparklers17",
+            "name": "Expo Remarker",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 23,
             "type": 1,
             "category": 2,
-            "name": "Fairy Sparklers18",
+            "name": "iPhone cRackler",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 24,
-            "type": 2,
+            "type": 0,
             "category": 2,
-            "name": "Fairy Sparklers19",
+            "name": "Pretty Petty Princess",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 25,
-            "type": 2,
+            "type": 0,
             "category": 2,
-            "name": "Fairy Sparklers20",
+            "name": "Muddy Fossilizer",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         },
         {
             "id": 26,
-            "type": 2,
+            "type": 0,
             "category": 2,
-            "name": "Fairy Sparklers21",
+            "name": "Pie in the Eye",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dangclass1.svg/220px-Dangclass1.svg.png",
             "description": "Multi-colored sparklers that are safe for any age."
         }
     ]
