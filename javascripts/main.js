@@ -1,52 +1,30 @@
-console.log("testing again for new branch");
-
 $(document).ready(function() {
 
-    var dinosaurs = [];
     var categories = [];
     var types = [];
     var products = [];
 
-    function writeDOM1(array) {
+    function writeDOM(array) {
         var domString = "";
             domString += `<select>`
         for (var i = 0; i < array.length; i++) {
-        	 domString += `
-            				<option>${array[i].name}</option>
-            			
-            			`;
+        	 domString += `<option>${array[i].name}</option>`;
         }
          domString += `</select>`
         $("#promises").append(domString);
-    }
+    };
 
-    function writeDOMproducts(array) {
-        var domString = "";
-            domString += `<select>`
-        for (var i = 0; i < array.length; i++) {
-        	 domString += `
-            				<option>${array[i].name}</option>
-            			
-            			`;
-        }
-         domString += `</select>`
-        $("#promises").append(domString);
-    }
-
-    //iife, like a getter
-    var firstDinosaurJSON = function() {
+    var productJSON = function() {
         return new Promise(function(resolve, reject) {
             $.ajax("./db/products.json").done(function(data1) {
-                console.log("getting here?")
                 resolve(data1.products)
-
             }).fail(function(error1) {
                 reject(error1);
             });
         });
     };
 
-    var secondDinosaurJSON = function() {
+    var categoryJSON = function() {
         return new Promise(function(resolve, reject) {
             $.ajax("./db/categories.json").done(function(data2) {
                 resolve(data2.categories);
@@ -56,7 +34,7 @@ $(document).ready(function() {
         });
     };
 
-    var thirdDinosaurJSON = function() {
+    var typeJSON = function() {
         return new Promise(function(resolve, reject) {
             $.ajax("./db/types.json").done(function(data3) {
                 resolve(data3.types);
@@ -66,52 +44,31 @@ $(document).ready(function() {
         });
     };
 
-    // Promise.all([firstDinosaurJSON(), secondDinosaurJSON(), thirdDinosaurJSON()])
-    // .then(function(resultz){
-    // 	console.log("resultz", resultz);
-    // 	resultz.forEach(function(ajaxCalls){
-    // 		ajaxCalls.forEach(function(dino){
-    // 			dinosaurs.push(dino);
-    // 		});
-    // 	});
-    // 	writeDOM();
-    // });
-
-    Promise.all([firstDinosaurJSON()])
-        .then(function(results) {
-            console.log("results: ", results);
-            results.forEach(function(ajaxCalls) {
-                ajaxCalls.forEach(function(singleProduct) {
-                    products.push(singleProduct);
-                    console.log("products: ", products);
-                });
-            });
-            writeDOM1(products);
-        });
-
-    Promise.all([secondDinosaurJSON()])
-        .then(function(results) {
-            console.log("results: ", results);
-            results.forEach(function(ajaxCalls) {
-                ajaxCalls.forEach(function(singleCategory) {
+        categoryJSON().then(function(results) {
+                results.forEach(function(singleCategory) {
                     categories.push(singleCategory);
-                });
             });
-            writeDOM1(categories);
+            writeDOM(categories);
         });
 
-    Promise.all([thirdDinosaurJSON()])
+    Promise.all([typeJSON()])
         .then(function(results) {
-            console.log("results: ", results);
             results.forEach(function(ajaxCalls) {
                 ajaxCalls.forEach(function(singleType) {
                     types.push(singleType);
-                    console.log("types: ", types);
                 });
             });
-            writeDOM1(types);
+            writeDOM(types);
         });
 
-
+    Promise.all([productJSON()])
+        .then(function(results) {
+            results.forEach(function(ajaxCalls) {
+                ajaxCalls.forEach(function(singleProduct) {
+                    products.push(singleProduct);
+                });
+            });
+            writeDOM(products);
+        });
 
 });
