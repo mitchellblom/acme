@@ -7,7 +7,7 @@ $(document).ready(function() {
     function writeOptionsToDOM(array, heading) {
         var optionString = "";
         optionString += `<h5>${heading}</h5>`;
-        optionString += `<select>`;
+        optionString += `<select id="${heading}">`;
         for (var i = 0; i < array.length; i++) {
             optionString += `<option>${array[i].name}</option>`;
         }

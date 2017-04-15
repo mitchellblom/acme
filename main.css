@@ -9,3 +9,7 @@ body {
 	height: 350px;
 	width: 300px;
 }
+
+.hidden {
+	display: none;
+}
