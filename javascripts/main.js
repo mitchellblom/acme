@@ -15,15 +15,22 @@ $(document).ready(function() {
         $("#optionContainer").append(optionString);
     };
 
-    function writeProductCardsToDOM(array){
-    	productString = `<div class="container col-sm-3">`;
-    	for (var i = 0; i < array.length; i++) {
+    function writeProductCardsToDOM(array) {
+        productString = "";
+        if (i % 4 === 0) {
+            productString += `<div class="row">`;
+        };
+        for (var i = 0; i < array.length; i++) {
+            productString += `<div class="col-md-3 productCard">`;
             productString += `<h3>${array[i].name}</h3>`;
-            productString += `<img src="${array[i].image}" alt="Product Image">`;
+            productString += `<img src="${array[i].image}" class="img-circle" alt="Product Image">`;
             productString += `<h4>${array[i].description}</h4>`;
+            productString += `</div>`;
+            if (i % 4 === 3) {
+                productString += `</div>`
+            };
         }
-    	productString += "</div>";
-    	$("#cardContainer").append(productString);
+        $("#cardContainer").append(productString);
     }
 
     var productJSON = function() {
