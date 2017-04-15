@@ -5,12 +5,14 @@ $(document).ready(function() {
     var products = [];
 
     function writeDOM(array) {
+    	console.log("");
         var domString = "";
-            domString += `<select>`
+        domString += `<select>`
         for (var i = 0; i < array.length; i++) {
-        	 domString += `<option>${array[i].name}</option>`;
+            // domString += '<h6>${array[i]}</h6>'
+            domString += `<option>${array[i].name}</option>`;
         }
-         domString += `</select>`
+        domString += `</select>`
         $("#promises").append(domString);
     };
 
@@ -44,31 +46,25 @@ $(document).ready(function() {
         });
     };
 
-        categoryJSON().then(function(results) {
-                results.forEach(function(singleCategory) {
-                    categories.push(singleCategory);
-            });
-            writeDOM(categories);
+    categoryJSON().then(function(results) {
+        results.forEach(function(singleCategory) {
+            categories.push(singleCategory);
+        });
+        writeDOM(categories);
+    });
+
+    typeJSON().then(function(results) {
+            results.forEach(function(singleType) {
+            types.push(singleType);
+        });
+        writeDOM(types);
         });
 
-    Promise.all([typeJSON()])
-        .then(function(results) {
-            results.forEach(function(ajaxCalls) {
-                ajaxCalls.forEach(function(singleType) {
-                    types.push(singleType);
-                });
-            });
-            writeDOM(types);
+    productJSON().then(function(results) {
+            results.forEach(function(singleProduct) {
+            products.push(singleProduct);
         });
-
-    Promise.all([productJSON()])
-        .then(function(results) {
-            results.forEach(function(ajaxCalls) {
-                ajaxCalls.forEach(function(singleProduct) {
-                    products.push(singleProduct);
-                });
-            });
-            writeDOM(products);
+        writeDOM(products);
         });
 
 });

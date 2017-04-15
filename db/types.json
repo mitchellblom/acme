@@ -2,19 +2,16 @@
     "types": [
         {
             "id": 0,
-            "category": 0,
             "name": "Personal",
             "description": "Small grade products"
         },
         {
-            "id": 2,
-            "category": 0,
+            "id": 1,
             "name": "Handheld",
             "description": "Products held for use"
         },
         {
             "id": 2,
-            "category": 0,
             "name": "Heavy Duty",
             "description": "Very dangerous. Take precaution!"
         }
