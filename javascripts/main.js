@@ -4,12 +4,12 @@ $(document).ready(function() {
     var types = [];
     var products = [];
 
-    function writeDOM(array) {
-    	console.log("");
+    function writeDOM(array, heading) {
+        console.log("");
         var domString = "";
+        domString += `<h5>${heading}</h5>`
         domString += `<select>`
         for (var i = 0; i < array.length; i++) {
-            // domString += '<h6>${array[i]}</h6>'
             domString += `<option>${array[i].name}</option>`;
         }
         domString += `</select>`
@@ -50,21 +50,21 @@ $(document).ready(function() {
         results.forEach(function(singleCategory) {
             categories.push(singleCategory);
         });
-        writeDOM(categories);
+        writeDOM(categories, "Categories");
     });
 
     typeJSON().then(function(results) {
-            results.forEach(function(singleType) {
+        results.forEach(function(singleType) {
             types.push(singleType);
         });
-        writeDOM(types);
-        });
+        writeDOM(types, "Types");
+    });
 
     productJSON().then(function(results) {
-            results.forEach(function(singleProduct) {
+        results.forEach(function(singleProduct) {
             products.push(singleProduct);
         });
-        writeDOM(products);
-        });
+        writeDOM(products, "Products");
+    });
 
 });
