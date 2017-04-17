@@ -8,8 +8,14 @@ body {
 	margin: 2%;
 	height: 350px;
 	width: 300px;
+	margin: auto;
 }
 
 .hidden {
 	display: none;
+}
+
+.thumbnail {
+	height: 100px;
+	width: 100px;
 }

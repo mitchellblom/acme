@@ -23,7 +23,7 @@ $(document).ready(function() {
         for (var i = 0; i < array.length; i++) {
             productString += `<div class="col-md-3 productCard">`;
             productString += `<h3>${array[i].name}</h3>`;
-            productString += `<img src="${array[i].image}" class="img-circle" alt="Product Image">`;
+            productString += `<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">`;
             productString += `<h4>${array[i].description}</h4>`;
             productString += `</div>`;
             if (i % 4 === 3) {
