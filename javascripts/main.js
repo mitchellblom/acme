@@ -93,22 +93,26 @@ $(document).ready(function() {
         writeProductCardsToDOM(products);
     });
 
-
     $("body").on("click", ".dynamicOption", function() {
-        // console.log("this: ", $(this));
         console.log("this inner: ", this.innerHTML);
-
         $(".productCard").hide();
         var test = this.innerHTML;
-        console.log(test);
+        console.log("test: ", test);
+        var rec = $(".0");
+        var com = $(".1");
+        var mil = $(".2");
+        for (var i = 0; i < rec.length; i++){
+        	console.log("iteration", rec[i]);
+        	console.log($(rec[i]));
+        	$(rec[i]).show();
+        }
             // this.childNodes.nodeValue
             // forEach or .class("Recreational");
-            // test.forEach(function() {
         if (test === "Recreational") {
             console.log("rec");
             $(".productCard").hide();
             console.log($(".0"));
-            $(".0").show();
+            $(".0").forEach().show();
         } else if (test === "Commercial") {
             console.log("com");
             $(".productCard").hide();
@@ -118,7 +122,5 @@ $(document).ready(function() {
             $(".productCard").hide();
             $(".2").show();
         }
-        // });
     });
-
 });
