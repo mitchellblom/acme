@@ -95,30 +95,30 @@ $(document).ready(function() {
 
 
     $("body").on("click", ".dynamicOption", function() {
-        console.log("this: ", $(this));
-        console.log("this: ", this.innerHTML);
-
-		console.log($(".0"));
-        $(".0")
         // console.log("this: ", $(this));
+        console.log("this inner: ", this.innerHTML);
 
         $(".productCard").hide();
-        // this.childNodes.nodeValue
-        // forEach or .class("Recreational");
-        // for (var i = 0; i < products.length; i++) {
-            if (this.innerHTML === 0) {
-                $(".0").show();
-            }
-            
-            else if (this.innerHTML === 1) {
-                $(".1").show();
-            }
-            
-            else if (this.innerHTML === 2) {
-                    $(".2").show();
-                }
-                // i want the shown object id or class to be dymanic
-        // }
+        var test = this.innerHTML;
+        console.log(test);
+            // this.childNodes.nodeValue
+            // forEach or .class("Recreational");
+            // test.forEach(function() {
+        if (test === "Recreational") {
+            console.log("rec");
+            $(".productCard").hide();
+            console.log($(".0"));
+            $(".0").show();
+        } else if (test === "Commercial") {
+            console.log("com");
+            $(".productCard").hide();
+            $(".1").show();
+        } else if (test === "Military") {
+            console.log("mil");
+            $(".productCard").hide();
+            $(".2").show();
+        }
+        // });
     });
 
 });
