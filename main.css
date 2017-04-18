@@ -1,5 +1,5 @@
 body {
-	background-color: navajowhite;
+	background-color: lightblue;
 	padding: 2%;
 }
 
@@ -19,4 +19,5 @@ body {
 .thumbnail {
 	height: 100px;
 	width: 100px;
+	border-radius: 10%;
 }

@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
-	$(document).click(function() {
-		console.log("doc click");
-		addEventListeners();
-	});
+	// $(document).click(function() {
+	// 	console.log("doc click");
+	// 	addEventListeners();
+	// });
 
-    addEventListeners = function() {
-        $("#Categories").on("change", function(e) {
-            console.log(e.target.value);
-            $(".productCard").hide();
-            $(".0").show(); // this id needs to be dymanic
-        });
-    };
+    // addEventListeners = function() {
+        // $("body").on("click", ".dynamicOption", function() {
+        //     console.log($(this));
+        //     $(".productCard").hide();
+        //     $(".0").show(); // i want the shown object id or class to be dymanic
+        // });
+    // };
 
 });
