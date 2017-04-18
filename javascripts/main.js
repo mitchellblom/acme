@@ -8,11 +8,12 @@ $(document).ready(function() {
         var optionString = "";
         optionString += `<h5>${heading}</h5>`;
         optionString += `<select id="${heading}">`;
+        optionString += `<option>All</option>`;
         for (var i = 0; i < array.length; i++) {
             optionString += `<option>${array[i].name}</option>`;
         }
         optionString += `</select>`;
-        $("#optionContainer").append(optionString);
+        $("#cardContainer").append(optionString);
     };
 
     function writeProductCardsToDOM(array) {
@@ -21,7 +22,7 @@ $(document).ready(function() {
             productString += `<div class="row">`;
         };
         for (var i = 0; i < array.length; i++) {
-            productString += `<div class="col-md-3 productCard">`;
+            productString += `<div class="col-md-3 productCard" id="${array[i].category}">`;
             productString += `<h3>${array[i].name}</h3>`;
             productString += `<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">`;
             productString += `<h4>${array[i].description}</h4>`;
@@ -31,6 +32,7 @@ $(document).ready(function() {
             };
         }
         $("#cardContainer").append(productString);
+        // $(".productCard").hide();
     }
 
     var productJSON = function() {

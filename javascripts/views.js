@@ -1,8 +1,16 @@
 $(document).ready(function() {
 
-$("#Categories").on("change", "option", function(){
-	console.log("Categories changed");
-	// console.log();
-});
+	$(document).click(function() {
+		console.log("doc click");
+		addEventListeners();
+	});
+
+    addEventListeners = function() {
+        $("#Categories").on("change", function() {
+            console.log("Categories changed");
+            $("#0").hide();
+            // console.log();
+        });
+    };
 
 });

@@ -1,5 +1,6 @@
 body {
 	background-color: navajowhite;
+	padding: 2%;
 }
 
 .productCard {
@@ -8,7 +9,7 @@ body {
 	margin: 2%;
 	height: 350px;
 	width: 300px;
-	margin: auto;
+	margin: 1%;
 }
 
 .hidden {
