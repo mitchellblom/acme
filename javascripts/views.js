@@ -6,10 +6,10 @@ $(document).ready(function() {
 	});
 
     addEventListeners = function() {
-        $("#Categories").on("change", function() {
-            console.log("Categories changed");
-            $("#0").hide();
-            // console.log();
+        $("#Categories").on("change", function(e) {
+            console.log(e.target.value);
+            $(".productCard").hide();
+            $(".0").show(); // this id needs to be dymanic
         });
     };
 

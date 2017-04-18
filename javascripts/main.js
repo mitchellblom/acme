@@ -22,7 +22,7 @@ $(document).ready(function() {
             productString += `<div class="row">`;
         };
         for (var i = 0; i < array.length; i++) {
-            productString += `<div class="col-md-3 productCard" id="${array[i].category}">`;
+            productString += `<div class="col-md-3 productCard ${array[i].type}">`;
             productString += `<h3>${array[i].name}</h3>`;
             productString += `<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">`;
             productString += `<h4>${array[i].description}</h4>`;

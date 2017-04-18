@@ -2,17 +2,56 @@
     "types": [
         {
             "id": 0,
-            "name": "Personal",
+            "category-id": 0,
+            "name": "Pest Control",
             "description": "Small grade products"
         },
         {
             "id": 1,
+            "category-id": 0,
             "name": "Handheld",
             "description": "Products held for use"
         },
         {
             "id": 2,
-            "name": "Heavy Duty",
+            "category-id": 0,
+            "name": "Pet Toys",
+            "description": "Products held for use"
+        },
+        {
+            "id": 3,
+            "category-id": 1,
+            "name": "Bargain",
+            "description": "Products held for use"
+        },
+        {
+            "id": 4,
+            "category-id": 1,
+            "name": "Adult",
+            "description": "Products held for use"
+        },
+        {
+            "id": 5,
+            "category-id": 1,
+            "name": "Deluxe",
+            "description": "Products held for use"
+        },
+        {
+            "id": 6,
+            "category-id": 2,
+            "name": "Family Friendly",
+            "description": "Products held for use"
+        },
+        {
+            "id": 7,
+            "category-id": 2,
+            "name": "Motion Sensing",
+            "description": "Products held for use"
+        },
+        {
+            "id": 8,
+            "category-id": 2,
+            "name": "Stress Relief",
             "description": "Very dangerous. Take precaution!"
         }
     ]
