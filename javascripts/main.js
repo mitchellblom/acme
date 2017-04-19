@@ -93,34 +93,5 @@ $(document).ready(function() {
         writeProductCardsToDOM(products);
     });
 
-    $("body").on("click", ".dynamicOption", function() {
-        console.log("this inner: ", this.innerHTML);
-        $(".productCard").hide();
-        var test = this.innerHTML;
-        console.log("test: ", test);
-        var rec = $(".0");
-        var com = $(".1");
-        var mil = $(".2");
-        for (var i = 0; i < rec.length; i++){
-        	console.log("iteration", rec[i]);
-        	console.log($(rec[i]));
-        	$(rec[i]).show();
-        }
-            // this.childNodes.nodeValue
-            // forEach or .class("Recreational");
-        if (test === "Recreational") {
-            console.log("rec");
-            $(".productCard").hide();
-            console.log($(".0"));
-            $(".0").forEach().show();
-        } else if (test === "Commercial") {
-            console.log("com");
-            $(".productCard").hide();
-            $(".1").show();
-        } else if (test === "Military") {
-            console.log("mil");
-            $(".productCard").hide();
-            $(".2").show();
-        }
-    });
+    
 });
