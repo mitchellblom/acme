@@ -2,7 +2,9 @@ $(document).ready(function() {
 
     $("body").on("click", ".dynamicOption", function() {
         $(".productCard").hide();
-        var test = this.innerHTML;
+
+// Category view filter
+        var categoryClicked = this.innerHTML;
 
         var rec = [];
         rec.push($(".0"));
@@ -19,29 +21,38 @@ $(document).ready(function() {
         mil.push($(".7"));
         mil.push($(".8"));
 
-        if (test === "Recreational") {
+        if (categoryClicked === "Recreational") {
             for (var i = 0; i < rec.length; i++) {
                 $(rec[i]).show();
             }
-        } else if (test === "Commercial") {
+        } else if (categoryClicked === "Commercial") {
             for (var j = 0; j < com.length; i = j++) {
                 $(com[j]).show();
             }
-        } else if (test === "Military")
+        } else if (categoryClicked === "Military")
             for (var k = 0; k < mil.length; k++) {
                 $(mil[k]).show();
             }
 
+// Type view filter
         var typeID = $(this).parent().attr("id");
         var typeNumber = typeID.split("Types-");
         var filteredType = typeNumber[1];
-        console.log("Type Number: ", typeNumber[1]);
+        // console.log("filteredType: ", filteredType);
         for (var l = 0; l < products.length; l++) {
-            if (products[l].type == typeNumber[1]) {
-                // console.log("found match: ", products[l]);
-                products[l].show();
+            if (products[l].type == filteredType) {
+                console.log("found type match: ", products[l]);
+                products[l].show();					// where i want to show the products that match type
             }
         }
-    });
 
+// Product view filter
+            var specificProductClicked = $(this).html();
+            for (var m = 0; m < products.length; m++) {
+                if (products[m].name == specificProductClicked) {
+                	console.log("found product match: ", products[m]);
+                    products[m].show();			// where i want to show the individual product selected
+                }
+            }
+    });
 });

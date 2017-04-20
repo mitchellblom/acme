@@ -2,6 +2,11 @@ body {
 	background-color: lightblue;
 }
 
+.navbar-brand {
+	font-size: 2em;
+	font-family: "arial black", "sans-serif";
+}
+
 .productCard {
 	border: 2px solid black;
 	border-radius: 10%;
@@ -23,4 +28,8 @@ body {
 
 .card {
 	display: inline-block;
+}
+
+button {
+	background-color: inherit;
 }

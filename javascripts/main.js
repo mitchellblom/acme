@@ -6,7 +6,7 @@
 
         function writeOptionsToDOM(array, heading) {
             var optionString = "";
-            optionString += 
+            	optionString += 
             			`<div class="card">
         				<div class="btn-group">
         				<div class="dropdown">
@@ -21,12 +21,11 @@
             			<a class="dynamicOption">${array[i].name}</a>
             			</li>`;
             }
-            optionString += 
+            	optionString += 
             			`</ul>
        					</div>
        					</div>
        					</div>`;
-
             $("#optionContainer").append(optionString);
         };
 
@@ -40,6 +39,7 @@
                 				<h3>${array[i].name}</h3>
                 				<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">
                 				<h4>${array[i].description}</h4>
+                				<h4>Type: ${array[i].type}</h4>
                 				</div>`;
                 if (i % 4 === 3) {
                     productString += `</div>`
