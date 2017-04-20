@@ -28,13 +28,13 @@ $(document).ready(function() {
                 }
             }
 
-            if (test === "Commercial") {
+            else if (test === "Commercial") {
                 for (var j = 0; j < com.length; i = j++) {
                     $(com[j]).show();
                 }
             }
 
-            if (test === "Military")
+            else if (test === "Military")
                 for (var k = 0; k < mil.length; k++) {
                     $(mil[k]).show();
                 }
