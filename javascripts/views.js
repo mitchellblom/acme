@@ -26,28 +26,44 @@ $(document).ready(function() {
                 for (var i = 0; i < rec.length; i++) {
                     $(rec[i]).show();
                 }
-            }
-
-            else if (test === "Commercial") {
+            } else if (test === "Commercial") {
                 for (var j = 0; j < com.length; i = j++) {
                     $(com[j]).show();
                 }
-            }
-
-            else if (test === "Military")
+            } else if (test === "Military")
                 for (var k = 0; k < mil.length; k++) {
                     $(mil[k]).show();
                 }
-        }
 
+            // if (test === "Recreational") {
+            //     for (var i = 0; i < rec.length; i++) {
+            //         $(rec[i]).show();
+            //     }
+            // } else if (test === "Commercial") {
+            //     for (var j = 0; j < com.length; i = j++) {
+            //         $(com[j]).show();
+            //     }
+            // } else if (test === "Military")
+            //     for (var k = 0; k < mil.length; k++) {
+            //         $(mil[k]).show();
+            //     }
 
+            var typeFilteredProducts = [];
 
-
-
-
-
-
-
+            var typeID = $(this).parent().attr("id");
+            console.log("typeID", typeID);
+            var typeNumber = typeID.split("Types-");
+            console.log("typeNumber[1]", typeNumber[1]);
+			for (var l = 0; l < products.length; l++) {
+				console.log("products[l].type: ", products[l].type);
+                    if (products[l].type == typeNumber[1]){
+                    	console.log("found match: ", products[l].type);
+                    	typeFilteredProducts.push(products[l])
+                    }
+                }
+                    	console.log(typeFilteredProducts);
+                	}
+			);
         // for (var i = 0; i < com.length; i++){
         // 	console.log("com i: ", com[i]);
         // 	console.log($(com[i]));
@@ -69,6 +85,6 @@ $(document).ready(function() {
         //     $(".productCard").hide();
         //     $(".2").show();
         // }
-    );
+    
 
 });

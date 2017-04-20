@@ -1,8 +1,9 @@
-$(document).ready(function() {
-
     var categories = [];
     var types = [];
     var products = [];
+    
+$(document).ready(function() {
+
 
     function writeOptionsToDOM(array, heading) {
         var optionString = "";
