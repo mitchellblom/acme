@@ -5,11 +5,11 @@ $(document).ready(function() {
             $(".productCard").hide();
             var test = this.innerHTML;
             console.log("test: ", test);
+
             var rec = [];
             rec.push($(".0"));
             rec.push($(".1"));
             rec.push($(".2"));
-            console.log(rec);
 
             var com = [];
             com.push($(".3"));

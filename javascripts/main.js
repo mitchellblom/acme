@@ -7,18 +7,22 @@ $(document).ready(function() {
     function writeOptionsToDOM(array, heading) {
         var optionString = "";
         optionString += `<h5>${heading}</h5>`;
-        optionString += `<div class="dropdown">
-        				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-   						All
-   						<span class="caret"></span>
-  						</button>
-        				<ul class="dropdown-menu" id="${heading}" aria-labelledby="dropdownMenu1">`;
+        optionString += `<div class="btn-group">
+        				<div class="dropdown">
+ 						<button id="${heading}-button" class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   						
+ 						All
+   						<span class="caret"></span></button>
+        				<ul class="dropdown-menu" id="${heading}">`;
         for (var i = 0; i < array.length; i++) {
-            optionString += `<li id="${heading}-${array[i].id}">
-            				<a class="dynamicOption">${array[i].name}
-            				</a></li>`;
+            optionString += 
+            				// `<li id="${heading}-${array[i].id}">
+            				// <a class="dynamicOption">${array[i].name}
+            				// </a></li>`;
+            				`<li id="${heading}-${array[i].id}"><a class="dynamicOption">${array[i].name}</a></li>`;
         }
-        optionString += `</ul></div>`;
+        optionString += `</ul>
+       					</div></div>`;
+
         $("#cardContainer").append(optionString);
     };
 
