@@ -45,18 +45,18 @@
 									}
 								});
 
-								// categories.forEach(function(passedCategory){
-								// 	if (passedCategory.id === types[i].category-id){
-								// 		types[i].categoryName = passedCategory.name;
-								// 	}
-								// })
+								categories.forEach(function(passedCategory){
+									if (passedCategory.id === array[i].categoryId){
+										array[i].categoryName = passedCategory.name
+									}
+								})
 
                 productString += `<div class="col-md-3 productCard ${array[i].type}" id="${array[i].name}">
                 				<h3>${array[i].name}</h3>
                 				<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">
                 				<h4>${array[i].description}</h4>
                 				<h4>Type: ${array[i].typeName}</h4>
-                				<h4>Category: ${array[i].categoryId}</h4>
+                				<h4>Category: ${array[i].categoryName}</h4>
                 				</div>`;
 
                 if (i % 4 === 3) {
