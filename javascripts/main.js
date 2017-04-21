@@ -2,6 +2,8 @@
     var types = [];
     var products = [];
 
+    console.log(types);
+
     $(document).ready(function() {
 
         function writeOptionsToDOM(array, heading) {
@@ -39,12 +41,21 @@
                 productString += `<div class="row">`;
             }
             for (var i = 0; i < array.length; i++) {
+								// array[i].type is the same as type.id
+
+								types.forEach(function(each){
+									if (each.id === array[i].type){
+										array[i].typeName = each.name;
+									}
+								})
+
                 productString += `<div class="col-md-3 productCard ${array[i].type}" id="${array[i].name}">
                 				<h3>${array[i].name}</h3>
                 				<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">
                 				<h4>${array[i].description}</h4>
-                				<h4>Type: ${array[i].type}</h4>
+                				<h4>Type: ${array[i].typeName}</h4>
                 				</div>`;
+
                 if (i % 4 === 3) {
                     productString += `</div>`;
                 }
