@@ -7,7 +7,7 @@
         function writeOptionsToDOM(array, heading) {
             var optionString = "";
             optionString +=
-                `<div class="card" id="${heading}>
+                		`<div class="card" id="${heading}>
         				<div class="btn-group">
         				<div class="dropdown">
  						<button id="${heading}-button" class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   						
@@ -17,12 +17,12 @@
         				<ul class="dropdown-menu">`;
             for (var i = 0; i < array.length; i++) {
                 optionString +=
-                    `<li id="${heading}-${array[i].id}">
+                    	`<li id="${heading}-${array[i].id}">
             			<a class="dynamicOption">${array[i].name}</a>
             			</li>`;
             }
             optionString +=
-                `</ul>
+               			`</ul>
        					</div>
        					</div>
        					</div>`;
@@ -101,52 +101,41 @@
             writeProductCardsToDOM(products);
         });
 
-        ////////////////
+        ////////VIEW FILTERS////////
 
         $("body").on("click", ".dynamicOption", function() {
             $(".productCard").hide();
 
-            // Category view filter
-            // var categoryClicked = this.innerHTML;
-
-            // var rec = [];
-            // rec.push($(".0"));
-            // rec.push($(".1"));
-            // rec.push($(".2"));
-
-            // var com = [];
-            // com.push($(".3"));
-            // com.push($(".4"));
-            // com.push($(".5"));
-
-            // var mil = [];
-            // mil.push($(".6"));
-            // mil.push($(".7"));
-            // mil.push($(".8"));
-
-            // if (categoryClicked === "Recreational") {
-            //     for (var i = 0; i < rec.length; i++) {
-            //         // $(rec[i]).show();
-            //     	writeProductCardsToDOM($(rec[i]));
-            //     }
-            // } else if (categoryClicked === "Commercial") {
-            //     for (var j = 0; j < com.length; i = j++) {
-            //         $(com[j]).show();
-            //     }
-            // } else if (categoryClicked === "Military")
-            //     for (var k = 0; k < mil.length; k++) {
-            //         $(mil[k]).show();
-            //     }
-
-            // Type view filter
-
-
-            console.log("this.parent", $(this).parent());
             var clickedId = $(this).parent().attr("id");
             var clickedIdLetter = clickedId[0]
             var filteredProducts = [];
 
-            if (clickedIdLetter === "T") {
+            if (clickedIdLetter === "C") {
+
+                if (clickedId === "Categories-0") {
+                    for (var i = 0; i < products.length; i++) {
+                        if (products[i].type == 0 || products[i].type == 1 || products[i].type == 2) {
+                            filteredProducts.push(products[i]);
+                        }
+                    }
+                    writeProductCardsToDOM(filteredProducts);
+                } else if (clickedId === "Categories-1") {
+                	for (var j = 0; j < products.length; j++) {
+                        if (products[j].type == 3 || products[j].type == 4 || products[j].type == 5) {
+                            filteredProducts.push(products[j]);
+                        }
+                    }
+                    writeProductCardsToDOM(filteredProducts);
+                } else if (clickedId === "Categories-2") {
+                	for (var k = 0; k < products.length; k++) {
+                        if (products[k].type == 6 || products[k].type == 7 || products[k].type == 8) {
+                            filteredProducts.push(products[k]);
+                        }
+                    }
+                    writeProductCardsToDOM(filteredProducts);
+                }
+
+            } else if (clickedIdLetter === "T") {
                 var typeNumber = clickedId.split("Types-");
                 var filteredType = typeNumber[1];
                 for (var l = 0; l < products.length; l++) {
@@ -158,13 +147,11 @@
             } else if (clickedIdLetter === "P") {
                 var typeNumber = clickedId.split("Products-");
                 var filteredProductId = typeNumber[1];
-                console.log("filteredProductId: ", filteredProductId);
                 for (var m = 0; m < products.length; m++) {
-                	console.log("products[m].id", products[m].id);
                     if (products[m].id == filteredProductId) {
-                    	filteredProducts.push(products[m]);
+                        filteredProducts.push(products[m]);
                     }
-                        writeProductCardsToDOM(filteredProducts);
+                    writeProductCardsToDOM(filteredProducts);
                 }
             }
         });
