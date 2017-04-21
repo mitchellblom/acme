@@ -27,14 +27,17 @@
        					</div>
        					</div>`;
             $("#optionContainer").append(optionString);
-        };
+        }
 
         function writeProductCardsToDOM(array) {
+
+    	// product types tell the category also, so those need to be linked to words to write on the card.
+
             $("#cardContainer").html("");
             productString = "";
             if (i % 4 === 0) {
                 productString += `<div class="row">`;
-            };
+            }
             for (var i = 0; i < array.length; i++) {
                 productString += `<div class="col-md-3 productCard ${array[i].type}" id="${array[i].name}">
                 				<h3>${array[i].name}</h3>
@@ -43,8 +46,8 @@
                 				<h4>Type: ${array[i].type}</h4>
                 				</div>`;
                 if (i % 4 === 3) {
-                    productString += `</div>`
-                };
+                    productString += `</div>`;
+                }
             }
             $("#cardContainer").append(productString);
         }
@@ -52,7 +55,7 @@
         var productJSON = function() {
             return new Promise(function(resolve, reject) {
                 $.ajax("./db/products.json").done(function(data1) {
-                    resolve(data1.products)
+                    resolve(data1.products);
                 }).fail(function(error1) {
                     reject(error1);
                 });
@@ -107,28 +110,28 @@
             $(".productCard").hide();
 
             var clickedId = $(this).parent().attr("id");
-            var clickedIdLetter = clickedId[0]
+            var clickedIdLetter = clickedId[0];
             var filteredProducts = [];
 
             if (clickedIdLetter === "C") {
 
                 if (clickedId === "Categories-0") {
                     for (var i = 0; i < products.length; i++) {
-                        if (products[i].type == 0 || products[i].type == 1 || products[i].type == 2) {
+                        if (products[i].type === 0 || products[i].type === 1 || products[i].type === 2) {
                             filteredProducts.push(products[i]);
                         }
                     }
                     writeProductCardsToDOM(filteredProducts);
                 } else if (clickedId === "Categories-1") {
                 	for (var j = 0; j < products.length; j++) {
-                        if (products[j].type == 3 || products[j].type == 4 || products[j].type == 5) {
+                        if (products[j].type === 3 || products[j].type === 4 || products[j].type === 5) {
                             filteredProducts.push(products[j]);
                         }
                     }
                     writeProductCardsToDOM(filteredProducts);
                 } else if (clickedId === "Categories-2") {
                 	for (var k = 0; k < products.length; k++) {
-                        if (products[k].type == 6 || products[k].type == 7 || products[k].type == 8) {
+                        if (products[k].type === 6 || products[k].type === 7 || products[k].type === 8) {
                             filteredProducts.push(products[k]);
                         }
                     }
@@ -145,8 +148,8 @@
                     writeProductCardsToDOM(filteredProducts);
                 }
             } else if (clickedIdLetter === "P") {
-                var typeNumber = clickedId.split("Products-");
-                var filteredProductId = typeNumber[1];
+                var typeNumberProd = clickedId.split("Products-");
+                var filteredProductId = typeNumberProd[1];
                 for (var m = 0; m < products.length; m++) {
                     if (products[m].id == filteredProductId) {
                         filteredProducts.push(products[m]);
