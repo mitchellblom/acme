@@ -1,11 +1,12 @@
 # NSS ACME Explosives
 
-![Splashpage]()
+![Splashpage](https://raw.githubusercontent.com/mitchellblom/acme/acme/acme1.png)
 
 <hr>
 
 ## Summary
-Used **Promises** from several **JSON** files to asynchronously write and filter data on the **DOM**. **Bootstrap**, **jQuery** and **Grunt** used throughout.
+Used **Promises** from several **JSON** files to asynchronously write and filter data on the **DOM**. 
+**Bootstrap**, **jQuery** and **Grunt** used throughout. Every category has three types, and every type subsequently has three products. Filterable by any of the selectors.
 
 <hr>
 
