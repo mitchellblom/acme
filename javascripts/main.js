@@ -6,8 +6,8 @@
 
         function writeOptionsToDOM(array, heading) {
             var optionString = "";
-            	optionString += 
-            			`<div class="card">
+            optionString +=
+                `<div class="card">
         				<div class="btn-group">
         				<div class="dropdown">
  						<button id="${heading}-button" class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   						
@@ -17,12 +17,12 @@
         				<ul class="dropdown-menu" id="${heading}">`;
             for (var i = 0; i < array.length; i++) {
                 optionString +=
-                    	`<li id="${heading}-${array[i].id}">
+                    `<li id="${heading}-${array[i].id}">
             			<a class="dynamicOption">${array[i].name}</a>
             			</li>`;
             }
-            	optionString += 
-            			`</ul>
+            optionString +=
+                `</ul>
        					</div>
        					</div>
        					</div>`;
@@ -30,6 +30,7 @@
         };
 
         function writeProductCardsToDOM(array) {
+            $("#cardContainer").html("");
             productString = "";
             if (i % 4 === 0) {
                 productString += `<div class="row">`;
@@ -99,5 +100,69 @@
             writeOptionsToDOM(products, "Products");
             writeProductCardsToDOM(products);
         });
+
+        ////////////////
+
+        $("body").on("click", ".dynamicOption", function() {
+            $(".productCard").hide();
+
+            // Category view filter
+            var categoryClicked = this.innerHTML;
+
+            var rec = [];
+            rec.push($(".0"));
+            rec.push($(".1"));
+            rec.push($(".2"));
+
+            var com = [];
+            com.push($(".3"));
+            com.push($(".4"));
+            com.push($(".5"));
+
+            var mil = [];
+            mil.push($(".6"));
+            mil.push($(".7"));
+            mil.push($(".8"));
+
+            if (categoryClicked === "Recreational") {
+                for (var i = 0; i < rec.length; i++) {
+                    // $(rec[i]).show();
+                	writeProductCardsToDOM($(rec[i]));
+                }
+            } else if (categoryClicked === "Commercial") {
+                for (var j = 0; j < com.length; i = j++) {
+                    $(com[j]).show();
+                }
+            } else if (categoryClicked === "Military")
+                for (var k = 0; k < mil.length; k++) {
+                    $(mil[k]).show();
+                }
+
+            // Type view filter
+
+            var clickedID = $(this).parent().attr("id");
+            var typeNumber = clickedID.split("Types-");
+            var filteredType = typeNumber[1];
+            var filteredProductsByType = [];
+
+            for (var l = 0; l < products.length; l++) {
+                if (products[l].type == filteredType) {
+                    filteredProductsByType.push(products[l]);
+                }
+                writeProductCardsToDOM(filteredProductsByType);
+            }
+
+            // Product view filter
+            var specificProductClicked = $(this).html();
+            for (var n = 0; n < products.length; n++) {
+                if (products[n].name == specificProductClicked) {
+
+                }
+            }
+
+
+        });
+
+
 
     });
