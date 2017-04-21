@@ -40,7 +40,7 @@
                 				<h3>${array[i].name}</h3>
                 				<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">
                 				<h4>${array[i].description}</h4>
-                				<h4>Type: ${array[i].typeg}</h4>
+                				<h4>Type: ${array[i].type}</h4>
                 				</div>`;
                 if (i % 4 === 3) {
                     productString += `</div>`
@@ -101,7 +101,7 @@
             writeProductCardsToDOM(products);
         });
 
-        ////////VIEW FILTERS////////
+////////////////////////////////////PRODUCT FILTERS/////////////////////////////////////////////////
 
         $("body").on("click", ".dynamicOption", function() {
             $(".productCard").hide();
