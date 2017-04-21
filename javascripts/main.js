@@ -7,14 +7,14 @@
         function writeOptionsToDOM(array, heading) {
             var optionString = "";
             optionString +=
-                `<div class="card">
+                `<div class="card" id="${heading}>
         				<div class="btn-group">
         				<div class="dropdown">
  						<button id="${heading}-button" class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   						
  						${heading}
    						<span class="caret"></span>
    						</button>
-        				<ul class="dropdown-menu" id="${heading}">`;
+        				<ul class="dropdown-menu">`;
             for (var i = 0; i < array.length; i++) {
                 optionString +=
                     `<li id="${heading}-${array[i].id}">
@@ -107,62 +107,65 @@
             $(".productCard").hide();
 
             // Category view filter
-            var categoryClicked = this.innerHTML;
+            // var categoryClicked = this.innerHTML;
 
-            var rec = [];
-            rec.push($(".0"));
-            rec.push($(".1"));
-            rec.push($(".2"));
+            // var rec = [];
+            // rec.push($(".0"));
+            // rec.push($(".1"));
+            // rec.push($(".2"));
 
-            var com = [];
-            com.push($(".3"));
-            com.push($(".4"));
-            com.push($(".5"));
+            // var com = [];
+            // com.push($(".3"));
+            // com.push($(".4"));
+            // com.push($(".5"));
 
-            var mil = [];
-            mil.push($(".6"));
-            mil.push($(".7"));
-            mil.push($(".8"));
+            // var mil = [];
+            // mil.push($(".6"));
+            // mil.push($(".7"));
+            // mil.push($(".8"));
 
-            if (categoryClicked === "Recreational") {
-                for (var i = 0; i < rec.length; i++) {
-                    // $(rec[i]).show();
-                	writeProductCardsToDOM($(rec[i]));
-                }
-            } else if (categoryClicked === "Commercial") {
-                for (var j = 0; j < com.length; i = j++) {
-                    $(com[j]).show();
-                }
-            } else if (categoryClicked === "Military")
-                for (var k = 0; k < mil.length; k++) {
-                    $(mil[k]).show();
-                }
+            // if (categoryClicked === "Recreational") {
+            //     for (var i = 0; i < rec.length; i++) {
+            //         // $(rec[i]).show();
+            //     	writeProductCardsToDOM($(rec[i]));
+            //     }
+            // } else if (categoryClicked === "Commercial") {
+            //     for (var j = 0; j < com.length; i = j++) {
+            //         $(com[j]).show();
+            //     }
+            // } else if (categoryClicked === "Military")
+            //     for (var k = 0; k < mil.length; k++) {
+            //         $(mil[k]).show();
+            //     }
 
             // Type view filter
 
-            var clickedID = $(this).parent().attr("id");
-            var typeNumber = clickedID.split("Types-");
-            var filteredType = typeNumber[1];
-            var filteredProductsByType = [];
 
-            for (var l = 0; l < products.length; l++) {
-                if (products[l].type == filteredType) {
-                    filteredProductsByType.push(products[l]);
+            console.log("this.parent", $(this).parent());
+            var clickedId = $(this).parent().attr("id");
+            var clickedIdLetter = clickedId[0]
+            var filteredProducts = [];
+
+            if (clickedIdLetter === "T") {
+                var typeNumber = clickedId.split("Types-");
+                var filteredType = typeNumber[1];
+                for (var l = 0; l < products.length; l++) {
+                    if (products[l].type == filteredType) {
+                        filteredProducts.push(products[l]);
+                    }
+                    writeProductCardsToDOM(filteredProducts);
                 }
-                writeProductCardsToDOM(filteredProductsByType);
-            }
-
-            // Product view filter
-            var specificProductClicked = $(this).html();
-            for (var n = 0; n < products.length; n++) {
-                if (products[n].name == specificProductClicked) {
-
+            } else if (clickedIdLetter === "P") {
+                var typeNumber = clickedId.split("Products-");
+                var filteredProductId = typeNumber[1];
+                console.log("filteredProductId: ", filteredProductId);
+                for (var m = 0; m < products.length; m++) {
+                	console.log("products[m].id", products[m].id);
+                    if (products[m].id == filteredProductId) {
+                    	filteredProducts.push(products[m]);
+                    }
+                        writeProductCardsToDOM(filteredProducts);
                 }
             }
-
-
         });
-
-
-
     });
