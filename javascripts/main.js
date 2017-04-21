@@ -2,8 +2,6 @@
     var types = [];
     var products = [];
 
-    console.log(types);
-
     $(document).ready(function() {
 
         function writeOptionsToDOM(array, heading) {
@@ -33,27 +31,32 @@
 
         function writeProductCardsToDOM(array) {
 
-    	// product types tell the category also, so those need to be linked to words to write on the card.
-
             $("#cardContainer").html("");
             productString = "";
             if (i % 4 === 0) {
                 productString += `<div class="row">`;
             }
             for (var i = 0; i < array.length; i++) {
-								// array[i].type is the same as type.id
 
-								types.forEach(function(each){
-									if (each.id === array[i].type){
-										array[i].typeName = each.name;
+								types.forEach(function(passedType){
+									if (passedType.id === array[i].type){
+										array[i].typeName = passedType.name;
+										array[i].categoryId = passedType.category_id;
 									}
-								})
+								});
+
+								// categories.forEach(function(passedCategory){
+								// 	if (passedCategory.id === types[i].category-id){
+								// 		types[i].categoryName = passedCategory.name;
+								// 	}
+								// })
 
                 productString += `<div class="col-md-3 productCard ${array[i].type}" id="${array[i].name}">
                 				<h3>${array[i].name}</h3>
                 				<img src="${array[i].image}" class="img-circle thumbnail" alt="Product Image">
                 				<h4>${array[i].description}</h4>
                 				<h4>Type: ${array[i].typeName}</h4>
+                				<h4>Category: ${array[i].categoryId}</h4>
                 				</div>`;
 
                 if (i % 4 === 3) {
@@ -118,14 +121,12 @@
 ////////////////////////////////////PRODUCT FILTERS/////////////////////////////////////////////////
 
         $("body").on("click", ".dynamicOption", function() {
-            $(".productCard").hide();
 
             var clickedId = $(this).parent().attr("id");
             var clickedIdLetter = clickedId[0];
             var filteredProducts = [];
 
             if (clickedIdLetter === "C") {
-
                 if (clickedId === "Categories-0") {
                     for (var i = 0; i < products.length; i++) {
                         if (products[i].type === 0 || products[i].type === 1 || products[i].type === 2) {
@@ -148,7 +149,6 @@
                     }
                     writeProductCardsToDOM(filteredProducts);
                 }
-
             } else if (clickedIdLetter === "T") {
                 var typeNumber = clickedId.split("Types-");
                 var filteredType = typeNumber[1];
