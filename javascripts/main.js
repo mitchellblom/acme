@@ -49,9 +49,9 @@
 
 								categories.forEach(function(passedCategory){
 									if (passedCategory.id === array[i].categoryId){
-										array[i].categoryName = passedCategory.name
+										array[i].categoryName = passedCategory.name;
 									}
-								})
+								});
 
                 productString += `<div class="col-md-3 productCard ${array[i].type}" id="${array[i].name}">
                 				<h3>${array[i].name}</h3>
