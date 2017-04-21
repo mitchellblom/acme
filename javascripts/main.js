@@ -4,6 +4,8 @@
 
     $(document).ready(function() {
 
+
+
         function writeOptionsToDOM(array, heading) {
             var optionString = "";
             optionString +=
@@ -116,6 +118,10 @@
             });
             writeOptionsToDOM(products, "Products");
             writeProductCardsToDOM(products);
+        });
+
+        $("#show-all").click(function() {
+        	writeProductCardsToDOM(products);
         });
 
 ////////////////////////////////////PRODUCT FILTERS/////////////////////////////////////////////////
