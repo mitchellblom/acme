@@ -1,3 +1,35 @@
 body {
-	background-color: navajowhite;
+	background-color: lightblue;
+}
+
+.navbar-brand {
+	font-size: 2em;
+	font-family: "arial black", "sans-serif";
+}
+
+.productCard {
+	border: 2px solid black;
+	border-radius: 10%;
+	margin: 2%;
+	height: 350px;
+	width: 300px;
+	margin: 1%;
+}
+
+.hidden {
+	display: none;
+}
+
+.thumbnail {
+	height: 100px;
+	width: 100px;
+	border-radius: 10%;
+}
+
+.card {
+	display: inline-block;
+}
+
+button {
+	background-color: inherit;
 }

@@ -1,11 +1,12 @@
 # NSS ACME Explosives
 
-![Splashpage]()
+![Splashpage](https://raw.githubusercontent.com/mitchellblom/acme/acme/acme1.png)
 
 <hr>
 
 ## Summary
-Create several **JSON** files that will be describing all of the explosive products. Use **Promises** to handle the order of the asynchronous operations needed to load the data.
+Used **Promises** from several **JSON** files to asynchronously write and filter data on the **DOM**. 
+**Bootstrap**, **jQuery** and **Grunt** used throughout. Every category has three types, and every type subsequently has three products. Filterable by any of the selectors.
 
 <hr>
 
@@ -25,10 +26,3 @@ Create several **JSON** files that will be describing all of the explosive produ
 1. Once all data is loaded, you need to display the products in a Bootstrap grid. Each product must display the string name of its product type, and product category. Not the integer id value.
 
 <hr>
-
-## Demonstrated
- - Ability to start from blank repo and install **jQuery** and **Bootstrap** using **Bower**.
- - Ability to install and use **Grunt** using **NPM**.
- - Creating a repeatable process to use for future projects.
- - **Bootstrap** styling including shadows and font-face truetype fonts.
- - Using **Promises** to handle the order of the asynchronous operations needed to load data from multiple files.
